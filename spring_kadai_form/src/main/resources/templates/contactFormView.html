@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<title>Spring Bootの基礎を学ぼう</title>
+</head>
+<body>
+	<h2>お問い合わせフォーム</h2>
+	<form th:action="@{/confirm}" method="post" th:object="${contactForm}">
+		<table border="0">
+			<tr>
+				<td><label for="name">お名前</label></td>
+				<td><input type="text" th:field="*{name}"><br></td>
+			</tr>
+			<tr>
+				<td></td>
+				<td><div th:if="${#fields.hasErrors('name')}" th:errors="*{name}" style="color: red;"></div></td>
+			</tr>
+			<tr>
+				<td><label for="email">メールアドレス</label></td>
+				<td><input type="text" th:field="*{email}"></td>
+			</tr>
+			<tr>
+				<td></td>
+				<td><div th:if="${#fields.hasErrors('email')}" th:errors="*{email}" style="color: red;"></div></td>
+			</tr>		
+			<tr>
+				<td><label for="question">お問い合わせ内容</label></td>
+				<td><textarea cols="30" rows="10" name="question"></textarea></td>
+			</tr>
+			<tr>
+				<td></td>
+				<td><div th:if="${#fields.hasErrors('question')}" th:errors="*{question}" style="color: red;"></div></td>
+			</tr>
+		</table>
+		<div><button type="submit">送信</div>
+	</form>
+</body>
+</html>

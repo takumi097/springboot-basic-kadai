@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<title>SpringBootの基礎を学ぼう</title>
+</head>
+<body>
+	<h2>入力内容をご確認ください。</h2>
+	<table border="1">
+		<tr>
+			<th>項目</th>
+			<th>入力内容</th>
+		</tr>
+		<tr>
+			<td>お名前</td>
+			<td th:text="${contactForm.getName()}"></td>
+		</tr>
+		<tr>
+			<td>メールアドレス</td>
+			<td th:text="${contactForm.getEmail()}"></td>
+		</tr>
+		<tr>
+			<td>お問い合わせ内容</td>
+			<td th:text="${contactForm.getQuestion()}"></td>
+		</tr>
+	</table>	
+</body>
+</html>
