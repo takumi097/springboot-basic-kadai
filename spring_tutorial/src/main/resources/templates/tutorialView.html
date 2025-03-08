@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html xmlns:th="https://www.thymeleaf.org">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <title>Spring Bootの基礎を学ぼう</title>
+    </head>
+    <body>
+        <h2>th:textでテキスト表示</h2>
+        <p th:text="${'侍' + '太郎'}"></p>
+        <p th:text="${123 + 654}"></p>
+
+        <h2>th:ifとth:unlessで条件分岐</h2>
+        <p th:if="${true}">ifの条件式はtrueです</p>
+        <p th:if="${false}">ifの条件式はfalseです</p>
+        <p th:unless="${true}">unlessの条件式はtrueです</p>
+        <p th:unless="${false}">unlessの条件式はfalseです</p>
+
+        <h2>th:eachで繰り返し</h2>
+        <ul>
+            <li th:each="number : ${#numbers.sequence(1,5)}">
+                <p th:text="${number}"></p>
+            </li>
+        </ul>
+    </body>
+</html>
